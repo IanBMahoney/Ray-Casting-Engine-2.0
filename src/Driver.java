@@ -24,7 +24,7 @@ public class Driver {
     int frames, fps;
     BufferedImage image = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
     BufferedImage minimap = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
-    ;
+    
     final int HORIZON = 400;
     final double RADIUS = 30;
     int width, height;
@@ -63,7 +63,7 @@ public class Driver {
         running = true;
         run();
 
-        // new TestDriver(walls);
+        
     }
 
     public void run() {
@@ -102,7 +102,7 @@ public class Driver {
                 g = minimap.getGraphics();
                 g.setColor(Color.WHITE);
                 g.fillRect(0, 0, minimap.getWidth(), minimap.getHeight());
-//                double multiplier = (double) minimap.getHeight() * 6 / 8 / init.size;
+
                 double multiplier = (double) minimap.getHeight() * 7 / 8 / (RADIUS * 2);
                 g.setColor(Color.BLACK);
                 for (Wall wall : walls) {
@@ -183,8 +183,6 @@ public class Driver {
         double lA = y1 - y2;
         double lB = x2 - x1;
         double lC = 1 * (x1 * y2 - x2 * y1);
-//        System.out.println(x1 + ", " + y1 + ", " + x2 + ", " + y2);
-//        System.out.println(lA + ", " + lB + ", " + lC);
 
         double t = Math.abs(lA * h + lB * k + lC) / (Math.sqrt(lA * lA + lB * lB));
 
@@ -214,18 +212,10 @@ public class Driver {
             }
 
             if (((!(xI1 > x1 && xI1 < x2)) && ((Math.sqrt(Math.pow(x1 - h, 2)) + Math.sqrt(Math.pow(y1 - k, 2))) > r)) && ((!(xI2 > x1 && xI2 < x2)) && ((Math.sqrt(Math.pow(x2 - h, 2)) + Math.sqrt(Math.pow(y2 - k, 2))) > r))) {
-                //System.out.println("False");
+                //System.out.println("false");
                 return null;
             }
 
-//            if (x1<xI1) {
-//                xI1 = x1;
-//                yI1 = y1;
-//            } 
-//            if (x2<xI2){
-//                xI2 = x2;
-//                yI2 = y2;
-//            }
             if ((Math.sqrt(Math.pow(x1 - h, 2) + Math.pow(y1 - k, 2))) < r) {
                 xI1 = x1;
                 yI1 = y1;
@@ -242,7 +232,7 @@ public class Driver {
         } else {
             //System.out.println("false");
         }
-        //System.out.println("FALSE");
+        //System.out.println("false");
         return null;
     }
 
